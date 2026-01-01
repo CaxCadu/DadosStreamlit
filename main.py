@@ -2,7 +2,6 @@ import streamlit as st
 import os
 import json
 import pandas as pd
-from groq import Groq
 import plotly.express as px
 
 PASTA = "uploads"
@@ -12,7 +11,7 @@ st.set_page_config(layout="wide")
 st.title("Assistente de Análise de Dados")
 st.write("Insights automáticos e gráficos gerados por IA")
 
-client = Groq(api_key=st.secrets["GROQ_API_KEY"])
+client = Groq(api_key=secrets["GROQ_API_KEY"])
 
 if "messages" not in st.session_state:
     st.session_state["messages"] = []
